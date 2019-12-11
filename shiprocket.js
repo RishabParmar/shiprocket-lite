@@ -4,7 +4,6 @@ const authToken = require('./credentials');
 const axiosAPI = require('axios');
 
 function fetchShipments(authToken, orderId){
-    // var url = '';
     if(!authToken.bearer){
         throw new Error("Something went wrong with the shipment credentials!!");
     }
