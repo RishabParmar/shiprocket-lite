@@ -8,8 +8,6 @@ function fetchShipments(authToken, orderId){
     if(!authToken.bearer){
         throw new Error("Something went wrong with the shipment credentials!!");
     }
-    // if (orderId) { url = 'https://apiv2.shiprocket.in/v1/external/orders/show/' + orderId; } 
-    // else { url = 'https://apiv2.shiprocket.in/v1/external/shipments/'; }
     var url = orderId ? 'https://apiv2.shiprocket.in/v1/external/orders/show/' + orderId : 'https://apiv2.shiprocket.in/v1/external/shipments/';
     return rx.from(axiosAPI.get(url,{
         headers:{
